@@ -28,7 +28,7 @@ export default (req, res) => {
   renderApp(context, store, location)
   const { redirect, missed } = context.getResult()
 
-  if (redirect) return reply.redirect(redirect.pathname)
+  if (redirect) return res.redirect(redirect.pathname)
 
   return Promise.all(store.getState().promises)
     .then(() => {
@@ -37,10 +37,9 @@ export default (req, res) => {
           markup: renderApp(context, store, location),
           initialState: JSON.stringify({ ...store.getState(), promises: null })
         })
-
     })
     .catch((e) => {
       console.error(e)
-      reply.status(500).render('index', { markup: JSON.stringify(e) })
+      res.status(500).render('index', { markup: JSON.stringify(e) })
     })
 }
