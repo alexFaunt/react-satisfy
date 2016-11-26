@@ -1,0 +1,21 @@
+:global html, :global body, :global #app {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.app {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.main {
+  flex-grow: 1;
+}

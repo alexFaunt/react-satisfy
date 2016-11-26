@@ -1,0 +1,12 @@
+.main {
+  position: relative;
+  flex-grow: 1;
+}
+
+.item {
+  background: red;
+}
+
+.link {
+  display: block;
+}
