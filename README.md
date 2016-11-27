@@ -1,10 +1,9 @@
 # Redux Satisfy
 
-Example app to show usage of a component to satisfy data needs.
+Satisfy your app state with a component.
 
-Lots of other stuff in it as it's a cut down version of another repo and no time to isolate further.
+Blog post.
 
-[Satisfy component](https://github.com/alexFaunt/redux-satisfy/blob/master/src/components/Satisfy/Satisfy.js)
-[Profile component uses Satisfy](https://github.com/alexFaunt/redux-satisfy/blob/master/src/components/Profile/Profile.jsx#L11)
-[Promise middleware tracks pending promises](https://github.com/alexFaunt/redux-satisfy/blob/master/src/middleware/promise.js#L17)
-[Server rendered awaits all promises](https://github.com/alexFaunt/redux-satisfy/blob/master/src/server/renderer.jsx#L33)
+Example folder contains a working example app.
+
+TODO - npm module coming when I get a chance.

@@ -21,19 +21,3 @@ const Profile = ({ params: { id }, profiles, getProfile }) => {
 
 const mapStateToProps = ({ profiles }) => ({ profiles })
 export default connect(mapStateToProps, { getProfile: getProfileAction })(Profile)
-
-/*
-Maybe...
-
-compose(
-  connect(mapStateToProps, { getProfile: getProfileAction }),
-  provide({ profile: ({ id, getProfile }) => getProfile(id) })
-)(Profile)
-
-
-
-*/
-
-/*
-  Check out performance of match vs renderToString
- */

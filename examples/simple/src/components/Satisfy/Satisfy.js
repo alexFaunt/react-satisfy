@@ -1,4 +1,5 @@
 import { Component } from 'react'
+/* eslint-disable no-unused-vars */
 
 export default class Satisfy extends Component {
   componentWillMount() {
