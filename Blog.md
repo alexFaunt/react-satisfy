@@ -1,10 +1,10 @@
-# Title
+# Satisfying your App's state
 
 ## TL;DR
 
 Using a component to fetch data can be simple and easy, A demo app employing my suggested approach can be found [here](https://github.com/alexFaunt/redux-satisfy)
 
-## Intro
+## Introduction
 
 Rendering server side is essential to a production `React` app. It delivers content to the user much faster, improves SEO, and enables a site to work without JS. To do this with `redux` state management we need to obtain the initial state of all the components being rendered. There are several approaches to achieve this including: manual fetching through the lifecycle, static component properties (`needs`) or [redux-async-connect](https://github.com/Rezonans/redux-async-connect). I'm not going to go into detail of these, but on server side they follow roughly the same procedure:
 
@@ -153,13 +153,12 @@ const renderApp = (context, store, location) => renderToString(
   </ServerRouter>
 )
 
-export default (req, res) => {
-  const location = req.url
+export default ({ url }, res) => {
   const store = configureStore({})
   const context = createServerRenderContext()
 
   // First pass at render
-  renderApp(context, store, location)
+  renderApp(context, store, url)
   const { redirect, missed } = context.getResult()
   if (redirect) return res.redirect(redirect.pathname)
 
@@ -167,13 +166,9 @@ export default (req, res) => {
     .then(() => {
       res.status(missed ? 404 : 200)
         .render('index', {
-          markup: renderApp(context, store, location), // Second render is not desirable
+          markup: renderApp(context, store, url), // Second render is not desirable
           initialState: JSON.stringify({ ...store.getState(), promises: null })
         })
-    })
-    .catch((e) => {
-      console.error(e)
-      res.status(500).render('index', { markup: JSON.stringify(e) })
     })
 }
 ```
