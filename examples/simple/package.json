@@ -1,7 +1,7 @@
 {
-  "name": "redux-satisfy",
+  "name": "redux-satisfy-example-simple",
   "version": "0.0.1",
-  "description": "Redux Satisfy example",
+  "description": "Redux Satisfy example simple",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production npm run server",

@@ -1,0 +1,28 @@
+{
+  "name": "redux-satisfy",
+  "version": "0.0.1",
+  "description": "Redux Satisfy component",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexFaunt/redux-satisfy.git"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "promise",
+    "ssr"
+  ],
+  "author": "Alex Faunt <shopfaunt321@hotmail.com>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/alexFaunt/redux-satisfy/issues"
+  },
+  "homepage": "https://github.com/alexFaunt/redux-satisfy#readme"
+}
