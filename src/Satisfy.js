@@ -6,7 +6,7 @@ const omit = (items, target) => Object.keys(target)
    return Object.assign(result, { [key]: target[key] })
  }, {})
 
-class Satisfy extends Component {
+ module.exports = class Satisfy extends Component {
   componentWillMount() {
     const condition = this.props.condtion
     if (typeof condition === 'undefined' || !condition) this.fire(this.props)
