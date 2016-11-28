@@ -1,6 +1,6 @@
 {
   "name": "redux-satisfy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Redux Satisfy component",
   "main": "index.js",
   "directories": {
