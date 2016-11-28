@@ -1,10 +1,5 @@
 const Component = require('react').Component
 
-const omit = (items, target) => Object.keys(target)
- .reduce((result, prop) => {
-   return items.includes(prop) ? result : Object.assign(result, [prop]: target[prop])
- })
-
 module.exports = class Satisfy extends Component {
   componentWillMount() {
     const condition = this.props.condtion
@@ -19,8 +14,15 @@ module.exports = class Satisfy extends Component {
   componentWillUpdate(nextProps) {
     this.fire(nextProps)
   }
-  fire = (props) => {
-    action(omit(['action', 'condition', 'children'], props))
+  fire(props) {
+    this.props.action(
+      Object.keys(target).reduce((result, prop) => {
+        if (['action', 'condition', 'children'].includes(prop)) return result
+        return Object.assign(result, { [prop]: target[prop] })
+      })
+    )
   }
-  render = () => null
+  render() {
+    return null
+  }
 }

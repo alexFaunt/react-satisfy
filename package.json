@@ -6,6 +6,9 @@
   "directories": {
     "example": "examples"
   },
+  "engines": {
+    "node": "4.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/alexFaunt/redux-satisfy/issues"
   },
-  "homepage": "https://github.com/alexFaunt/redux-satisfy#readme"
+  "homepage": "https://github.com/alexFaunt/redux-satisfy#readme",
+  "dependencies": {
+    "react": "^15.4.1"
+  }
 }

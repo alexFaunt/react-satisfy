@@ -1,3 +1,1 @@
-module.exports = {
-  Satisfy: require('./src/Satisfy')
-}
+module.exports = require('./src/Satisfy')

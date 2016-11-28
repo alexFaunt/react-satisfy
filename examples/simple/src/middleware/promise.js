@@ -2,6 +2,7 @@ import { awaitPromise } from '../actions/promiseActions'
 
 export default () => (next) => (action) => {
   const { promise, success, failure } = action
+
   if (!promise) return next(action)
 
   const actionPromise = promise()
