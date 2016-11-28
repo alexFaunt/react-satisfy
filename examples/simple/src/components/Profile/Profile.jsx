@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Satisfy from '../Satisfy/Satisfy'
+import Satisfy from 'redux-satisfy'
 import Links from '../Links/Links'
 import { getProfile as getProfileAction } from '../../actions/profileActions'
 

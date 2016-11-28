@@ -16,9 +16,9 @@ module.exports = class Satisfy extends Component {
   }
   fire(props) {
     this.props.action(
-      Object.keys(target).reduce((result, prop) => {
-        if (['action', 'condition', 'children'].includes(prop)) return result
-        return Object.assign(result, { [prop]: target[prop] })
+      Object.keys(props).reduce((result, key) => {
+        if (['action', 'condition', 'children'].includes(key)) return result
+        return Object.assign(result, { [key]: props[prop] })
       })
     )
   }
