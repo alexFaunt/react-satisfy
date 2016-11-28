@@ -35,7 +35,7 @@
     "postcss-loader": "^1.1.1",
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^3.0.0",
-    "redux-satisfy": "0.0.1",
+    "redux-satisfy": "0.0.3",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
