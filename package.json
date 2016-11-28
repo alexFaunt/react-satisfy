@@ -19,7 +19,8 @@
   "keywords": [
     "redux",
     "react",
-    "promise",
+    "react-redux",
+    "state",
     "ssr"
   ],
   "author": "Alex Faunt <shopfaunt321@hotmail.com>",
