@@ -4,16 +4,16 @@ const omit = (items, target) => Object.keys(target)
  .reduce((result, key) => {
    if (items.includes(key)) return result
    return Object.assign(result, { [key]: target[key] })
- })
+ }, {})
 
-module.exports = class Satisfy extends Component {
+class Satisfy extends Component {
   componentWillMount() {
     const condition = this.props.condtion
     if (typeof condition === 'undefined' || !condition) this.fire(this.props)
   }
   shouldComponentUpdate(nextProps) {
     const rest = omit(['condition', 'children'], nextProps)
-    return typeof this.props.condtion === 'undefined'
+    return typeof nextProps.condition === 'undefined'
       ? Object.keys(rest).some((prop) => this.props[prop] !== rest[prop])
       : !nextProps.condition
   }
