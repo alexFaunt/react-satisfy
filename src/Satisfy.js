@@ -4,7 +4,7 @@ const omit = (items, target) => Object.keys(target)
  .reduce((result, key) => {
    if (items.includes(key)) return result
    return Object.assign(result, { [key]: target[key] })
- )
+ })
 
 module.exports = class Satisfy extends Component {
   componentWillMount() {
