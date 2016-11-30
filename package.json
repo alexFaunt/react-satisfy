@@ -1,7 +1,7 @@
 {
-  "name": "redux-satisfy",
-  "version": "0.0.8",
-  "description": "Redux Satisfy component",
+  "name": "react-satisfy",
+  "version": "0.0.1",
+  "description": "React Satisfy component",
   "main": "index.js",
   "directories": {
     "example": "examples"
@@ -18,11 +18,11 @@
     "url": "git+https://github.com/alexFaunt/redux-satisfy.git"
   },
   "keywords": [
-    "redux",
     "react",
-    "react-redux",
     "state",
-    "ssr"
+    "ssr",
+    "redux",
+    "react-redux"
   ],
   "author": "Alex Faunt <shopfaunt321@hotmail.com>",
   "license": "WTFPL",
