@@ -1,29 +1,22 @@
-const Component = require('react').Component
+import { Component, PropTypes } from 'react'
 
-const omit = (items, target) => Object.keys(target)
- .reduce((result, key) => {
-   if (items.includes(key)) return result
-   return Object.assign(result, { [key]: target[key] })
- }, {})
-
-module.exports = class Satisfy extends Component {
-  componentWillMount() {
-    const condition = this.props.condtion
-    if (typeof condition === 'undefined' || !condition) this.fire(this.props)
+export default class Satisfy extends Component {
+  static propTypes = {
+    action: PropTypes.func.isRequired
   }
-  shouldComponentUpdate(nextProps) {
-    const rest = omit(['condition', 'children'], nextProps)
-    return typeof nextProps.condition === 'undefined'
+  componentWillMount() {
+    if (typeof this.props.condition === 'undefined' || !this.props.condition) this.fire(this.props)
+  }
+  shouldComponentUpdate({ condition, children, ...rest }) {
+    return typeof this.props.condition === 'undefined'
       ? Object.keys(rest).some((prop) => this.props[prop] !== rest[prop])
-      : !nextProps.condition
+      : !condition
   }
   componentWillUpdate(nextProps) {
     this.fire(nextProps)
   }
-  fire(props) {
-    this.props.action(omit(['action', 'condition', 'children'], props))
+  fire = ({ action, condition, children, ...rest }) => {
+    action(rest)
   }
-  render() {
-    return null
-  }
+  render = () => null
 }
